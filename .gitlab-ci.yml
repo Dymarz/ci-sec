@@ -18,6 +18,15 @@ build_wast_zap_script:
     - docker build pentest -t $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-script-$CI_COMMIT_SHA
     - docker push $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-script-$CI_COMMIT_SHA
 
+build_wast_zap:
+  stage: build
+  before_script:
+    - cd wasttesting
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - docker build zap -t $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-$CI_COMMIT_SHA
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-$CI_COMMIT_SHA
+
 
 # TEST WAST
 test_wast:
