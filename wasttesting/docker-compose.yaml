@@ -10,7 +10,8 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - ./results:/results/
   zap:
-    image: owasp/zap2docker-stable
+    build: zap
+#    image: owasp/zap2docker-stable
     command: zap.sh -daemon -host 0.0.0.0 -port 8090 -config api.disablekey=true -config database.recoverylog=false -config connection.timeoutInSecs=120 -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true
 #  juice_shop:
 #    image: bkimminich/juice-shop
