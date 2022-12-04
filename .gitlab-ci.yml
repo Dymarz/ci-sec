@@ -1,7 +1,7 @@
 #load docker image & start docker engine
 image: docker
 services:
- - docker
+ - docker:dind
 
 stages:
   - build
