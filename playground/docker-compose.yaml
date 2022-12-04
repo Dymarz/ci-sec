@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  juice_shop:
+    image: bkimminich/juice-shop
+  zap_scan:
+    depends_on:
+      - juice_shop
+    build: zapscan
+    command: wait-for-it juice_shop:3000 --timeout=30 -- zap-baseline.py -t http://juice_shop:3000 -m 3 -J report.json -r report.html -j -g template.config -d
+    volumes:
+      - .:/zap/wrk

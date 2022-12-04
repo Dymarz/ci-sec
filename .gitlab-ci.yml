@@ -9,23 +9,23 @@ stages:
   - evaluate
 
 # BUILD WAST
-build_wast_zap_script:
-  stage: build
-  before_script:
-    - cd wasttesting
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-  script:
-    - docker build pentest -t $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-script-$CI_COMMIT_SHA
-    - docker push $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-script-$CI_COMMIT_SHA
+# build_wast_zap_script:
+#   stage: build
+#   before_script:
+#     - cd wasttesting
+#     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+#   script:
+#     - docker build pentest -t $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-script-$CI_COMMIT_SHA
+#     - docker push $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-script-$CI_COMMIT_SHA
 
-build_wast_zap:
-  stage: build
-  before_script:
-    - cd wasttesting
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-  script:
-    - docker build zap -t $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-$CI_COMMIT_SHA
-    - docker push $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-$CI_COMMIT_SHA
+# build_wast_zap:
+#   stage: build
+#   before_script:
+#     - cd wasttesting
+#     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+#   script:
+#     - docker build zap -t $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-$CI_COMMIT_SHA
+#     - docker push $CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-$CI_COMMIT_SHA
 
 
 # TEST WAST
@@ -34,14 +34,14 @@ test_wast:
   image:
     name: docker/compose
   before_script:
-    - apk add python3 zip
-    - export ZAP_URL=$CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-$CI_COMMIT_SHA
-    - export ZAP_SCRIPT_URL=$CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-script-$CI_COMMIT_SHA
-    - python3 update-compose.py --file='wasttesting/docker-compose.yaml' --variables 'zap_script_url' 'zap_url'
+    # - apk add python3 zip
+    # - export ZAP_URL=$CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-$CI_COMMIT_SHA
+    # - export ZAP_SCRIPT_URL=$CI_REGISTRY/$CI_PROJECT_PATH:wast-zap-script-$CI_COMMIT_SHA
+    # - python3 update-compose.py --file='wasttesting/docker-compose.yaml' --variables 'zap_script_url' 'zap_url'
     - cd wasttesting
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker-compose up
+    - docker-compose up --abort-on-container-exit
   artifacts:
     paths:
       - wasttesting/results
