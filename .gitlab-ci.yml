@@ -1,7 +1,7 @@
 # load docker image & start docker engine
-image: docker:19.03.1
-services:
-  - docker:19.03.1-dind
+#image: docker:19.03.1
+#services:
+#  - docker:19.03.1-dind
 
 stages:
   - build
@@ -10,7 +10,7 @@ stages:
 
 playground:
   stage: build
-  image: docker/compose:debian-1.29.2
+  image: docker/compose
   script:  
     - cd playground
     - docker-compose up --abort-on-container-exit
