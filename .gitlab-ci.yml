@@ -10,7 +10,7 @@ stages:
 
 playground:
   stage: build
-  image: tiangolo/docker-with-compose
+  image: alpinelinux/docker-compose
   script:  
     - cd playground
     - docker-compose up --abort-on-container-exit
