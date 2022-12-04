@@ -1,7 +1,7 @@
-# load docker image & start docker engine
-#image: docker:19.03.1
-#services:
-#  - docker:19.03.1-dind
+#load docker image & start docker engine
+image: docker
+services:
+ - docker
 
 stages:
   - build
