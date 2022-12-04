@@ -5,7 +5,7 @@ services:
   zap_scan:
     depends_on:
       - juice_shop
-    build: zapscan
-    command: /wait-for-it.sh juice_shop:3000 --timeout=30 -- zap-baseline.py -t http://juice_shop:3000 -d -r report.html
+    image: owasp/zap2docker-stable
+    command: zap-baseline.py -t http://juice_shop:3000 -d -r report.html
     volumes:
       - ./scanresults:/zap/wrk

@@ -1,4 +1,4 @@
-FROM owasp/zap2docker-stable:latest
+FROM owasp/zap2docker-stable
 
 USER root
 COPY ./wait-for-it.sh /wait-for-it.sh
