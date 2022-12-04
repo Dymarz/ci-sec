@@ -15,6 +15,7 @@ playground:
     - cd playground
     - docker-compose up --abort-on-container-exit
   artifacts:
+    when: always
     paths:
       - playground/scanresults
     expire_in: 1 week
