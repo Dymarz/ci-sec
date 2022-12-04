@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 services:
   juice_shop:
     image: bkimminich/juice-shop
