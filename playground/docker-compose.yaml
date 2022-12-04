@@ -6,6 +6,6 @@ services:
     depends_on:
       - juice_shop
     build: zapscan
-    command: /wait-for-it.sh juice_shop:3000 --timeout=30 -- zap-baseline.py -t http://juice_shop:3000 -m 3 -J report.json -r report.html -j -g template.config -d
+    command: /wait-for-it.sh juice_shop:3000 --timeout=30 -- zap-baseline.py -t http://juice_shop:3000 -J report.json -r report.html -g template.config
     volumes:
       - ./scanresults:/zap/wrk
