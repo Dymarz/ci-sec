@@ -13,7 +13,6 @@ playground:
   image: docker/compose
   script:  
     - cd playground
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker-compose up --abort-on-container-exit
   artifacts:
     paths:
