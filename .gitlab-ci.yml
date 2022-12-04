@@ -10,7 +10,7 @@ stages:
 
 playground:
   stage: build
-  image: alpinelinux/docker-compose
+  image: docker/compose:debian-1.29.2
   script:  
     - cd playground
     - docker-compose up --abort-on-container-exit
