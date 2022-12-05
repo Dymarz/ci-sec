@@ -1,5 +1,6 @@
-FROM owasp/zap2docker-stable as pentest
+FROM owasp/zap2docker-stable
 
-COPY ./wait-for-it.sh /zap/
-
-ENTRYPOINT [ "ls", "/" ]
+USER root
+COPY ./wait-for-it.sh /wait-for-it.sh
+RUN chmod +x /wait-for-it.sh
+USER zap

@@ -8,17 +8,17 @@ stages:
   - test
   - evaluate
 
-playground:
-  stage: build
+wasttesting:
+  stage: test
   image: docker/compose
   script:  
-    - cd playground
+    - cd wasttesting
     - docker-compose up --abort-on-container-exit
   artifacts:
     name: report
     when: always
     paths:
-      - playground/scanresults
+      - wasttesting/scanresults
 
 # BUILD WAST
 # build_wast_zap_script:
