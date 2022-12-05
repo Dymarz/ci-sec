@@ -15,10 +15,10 @@ playground:
     - cd playground
     - docker-compose up --abort-on-container-exit
   artifacts:
+    name: report
     when: always
     paths:
       - playground/scanresults
-    expire_in: 1 week
 
 # BUILD WAST
 # build_wast_zap_script:
