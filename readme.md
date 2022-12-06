@@ -18,7 +18,7 @@ ___
 
 * docker-compose up **--abort-on-container-exit**
   * when zap-scan finished, the juice-shop is still running
-* build seperate dockerimage for zapscan and integrate a *wait-for-it.sh* script
+* build seperate dockerimage for zapscan and integrate a *[wait-for-it.sh](https://github.com/vishnubob/wait-for-it)* script
   * this checks the availability of the webapp
   * it try 30sec to connect the service
   * run script when service responed
