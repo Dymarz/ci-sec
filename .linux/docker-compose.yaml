@@ -1,0 +1,8 @@
+services:
+  docker:
+    build: .
+    stdin_open: true
+    tty: true
+    volumes:
+    - ../:/app
+    - /var/run/docker.sock:/var/run/docker.sock
