@@ -12,10 +12,10 @@ wasttesting:
   stage: test
   image: docker/compose
   allow_failure: true
-  before_script:  
+  script:  
     - cd wasttesting
     - docker-compose up --abort-on-container-exit
-  script:
+  after_script:
     - false || exit_code=$?
     - echo $exit_code
   artifacts:
