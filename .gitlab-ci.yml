@@ -14,6 +14,7 @@ wasttesting:
   script:  
     - cd wasttesting
     - docker-compose up --abort-on-container-exit
+  after_script:
     - false || exit_code=$?
     - echo $exit_code
   artifacts:
