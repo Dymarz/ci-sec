@@ -11,6 +11,20 @@ It use the three different **DAST** technics: *Web Application* and *Behaviour D
 
 ## Process explained:
 The *.gitlab-ci.yml* defines the CI Jobs. It use a docker container to start the engine and build docker containers in it. In the three different testing methods folders are *docker-compose.yaml* which define the services. The **Juice Shop** Application will be used in every job. The other services in the job will scan the application and push the results to the artifacts.
+
+## Specials:
+The folder [*.linux*](.linux) contains a awesome [gitlab-runner script](.linux/run-local-gitlab-runner.sh) for local gitlab ci tests! :heart_eyes_cat:
+This works only under Linux. Script needs to from the .linux folder.
+
+Advantages:
+* Much faster build results to test some ci jobs
+* No need to commit and push every random try
+* Save gitlab runner build time (they are limited)
+
+TODOs in this section to run this under windows:
+* gitlab-runner do not support mounting files in windows! :crying_cat_face:
+* Maybe an addition abstraction layer can handle this
+  * Copy whole Repo in a fresh Linux Container with Docker and hope that gitlab-runner doesn't have problems with a windows docker desktop daemon
 ___
 ## WAST:
 

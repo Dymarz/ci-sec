@@ -1,3 +1,6 @@
 FROM docker:latest
 
-RUN apk add sh
+WORKDIR /app
+COPY ../ ./
+
+RUN apk add bash
