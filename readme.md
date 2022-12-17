@@ -40,6 +40,7 @@ ___
 * error-code from scan make the pipeline fail but the scan was successful.
   * need seperate **evaluate job** or method to handle the error-code, otherwise it will be hard to understand when a scan aborted or a scanreport is accessible 
 * ARTIFACTS: **.gitlab-ci.yml start the whole repository in a docker** is important to understand because the scanresults from the docker in docker container need to be mount on a volumn in this repository. After the docker-compose.yaml is finish and the services pushed their results in the repository_volumn, the job is done and these results can be pushed from the gitlab runner to the artifacts.
+* Scanresults can not be published when the mounted folder "scanresults" dont have write-permission for all users! happens under local linux
 
 ### Comparison to the base repo:
 * don't need to build the zap application

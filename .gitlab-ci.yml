@@ -30,6 +30,8 @@ wasttesting:
     when: always
     paths:
       - wasttesting/scanresults
+  tags:
+    - ci-sec
 
 # BUILD WAST
 # build_wast_zap_script:
