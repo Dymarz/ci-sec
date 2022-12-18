@@ -26,6 +26,7 @@ wasttesting:
     - docker-compose up --exit-code-from zap_scan 2> ../docker-logs.txt
   after_script:
     - ls -l
+    - cat docker-logs.txt
     - exitcode=$(tail -n 1 docker-logs.txt)
     - case $exitcode in 
         0) echo "Success";; 
