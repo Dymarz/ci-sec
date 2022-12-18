@@ -32,7 +32,7 @@ wast_test:
     when: always
     paths:
       - wasttesting/scanresults
-  allow_failures:
+  allow_failure:
     exit_codes:
       - 2
 
