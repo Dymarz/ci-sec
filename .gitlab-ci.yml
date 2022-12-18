@@ -13,7 +13,7 @@ stages:
   - test
   - evaluate
 
-wasttesting:
+wast_test:
   tags:
     - ci-sec
   stage: test
@@ -21,24 +21,26 @@ wasttesting:
   allow_failure: true
   script:  
     - cd wasttesting
-    - chmod o+w scanresults
-    - ls -l
-    - docker-compose up --exit-code-from zap_scan 2> ../docker-logs.txt
+    - docker-compose up --abort-on-container-exit
   after_script:
-    - ls -l
-    - cat docker-logs.txt
-    - exitcode=$(tail -n 1 docker-logs.txt)
-    - case $exitcode in 
-        0) echo "Success";; 
-        1) echo "At Least 1 FAIL";; 
-        2) echo "At Least one WARN and no FAILS";; 
-        3) echo "Any other failure";; 
-      esac
+    - echo "exitcode abfangen.."
   artifacts:
     name: wastreport
     when: always
     paths:
       - wasttesting/scanresults
+
+
+evaluate_wast:
+  stage: evaluate
+  before_script:
+    - apk add jq
+  script:
+    - cd wasttesting/scanresults
+    - alerts=$(cat wast_report.json | jq -r '.site[].alerts' | jq length)
+    - echo $alerts
+  dependencies:
+    - wast_test
 
 # BUILD WAST
 # build_wast_zap_script:
