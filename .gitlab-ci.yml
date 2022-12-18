@@ -23,7 +23,7 @@ wasttesting:
     - cd wasttesting
     - chmod o+w scanresults
     - docker-compose up --exit-code-from zap_scan 2> docker-logs.txt
-    - exitcode=$(tail -n 1 out)
+    - exitcode=$(tail -n 1 docker-logs.txt)
     - case $var in \
         0) echo "Success";; \
         1) echo "At Least 1 FAIL";; \
