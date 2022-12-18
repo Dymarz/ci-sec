@@ -23,7 +23,7 @@ wasttesting:
     - cd wasttesting
     - chmod o+w scanresults
     - ls -l
-    - docker-compose up --exit-code-from zap_scan 2> docker-logs.txt
+    - docker-compose up --exit-code-from zap_scan 2> ../docker-logs.txt
   after_script:
     - ls -l
     - exitcode=$(tail -n 1 docker-logs.txt)
