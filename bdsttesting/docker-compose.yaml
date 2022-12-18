@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  juice_shop:
+    image: bkimminich/juice-shop
+
+  seleniumbase:
+    build: seleniumspielerein
+    depends_on:
+      - juice_shop
+    command: /wait-for-it.sh juice_shop:3000 --timeout=30 -- rspec .
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - ./results:/results
