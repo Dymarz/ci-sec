@@ -1,5 +1,8 @@
 version: '3'
 services:
+  zap:
+    image: owasp/zap2docker-stable
+    command: zap.sh -daemon -host 0.0.0.0 -port 8090 -config api.disablekey=true -config database.recoverylog=false -config connection.timeoutInSecs=120 -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true
 
   juice_shop:
     image: bkimminich/juice-shop
@@ -8,7 +11,8 @@ services:
     build: seleniumspielerein
     depends_on:
       - juice_shop
-    command: /wait-for-it.sh juice_shop:3000 --timeout=30 -- rspec .
+      - zap
+    command: /wait-for-it.sh juice_shop:3000 --timeout=30 -- /wait-for-it.sh zap:8090 --timeout=90 --  rspec .
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - ./results:/results

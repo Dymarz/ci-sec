@@ -48,6 +48,16 @@ evaluate_wast:
   dependencies:
     - wast_test
 
+
+bdst_test:
+  #tags:
+  #  - ci-sec
+  stage: test
+  image: docker/compose
+  script:
+    - cd bdsttesting
+    - docker-compose up --abort-on-container-exit
+
 # BUILD WAST
 # build_wast_zap_script:
 #   stage: build
