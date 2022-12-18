@@ -19,11 +19,18 @@ wast_test:
   stage: test
   image: docker/compose
   allow_failure: true
+  before_script:
+    - apk add jq
   script:  
+    - set +e 
     - cd wasttesting
-    - docker-compose up --abort-on-container-exit
-  after_script:
-    - echo "exitcode abfangen.."
+    - docker-compose up --abort-on-container-exit || EXIT_CODE=$?
+  after_script:    
+    - cd wasttesting/scanresults
+    - alerts=$(cat wast_report.json | jq -r '.site[].alerts' | jq length)
+    - echo $alerts
+    - set -e
+    - if [$alerts -gt 0]; then exit 1; else exit 0; fi
   artifacts:
     name: wastreport
     when: always
@@ -31,16 +38,16 @@ wast_test:
       - wasttesting/scanresults
 
 
-evaluate_wast:
-  stage: evaluate
-  before_script:
-    - apk add jq
-  script:
-    - cd wasttesting/scanresults
-    - alerts=$(cat wast_report.json | jq -r '.site[].alerts' | jq length)
-    - echo $alerts
-  dependencies:
-    - wast_test
+# evaluate_wast:
+#   stage: evaluate
+#   before_script:
+#     - apk add jq
+#   script:
+#     - cd wasttesting/scanresults
+#     - alerts=$(cat wast_report.json | jq -r '.site[].alerts' | jq length)
+#     - echo $alerts
+#   dependencies:
+#     - wast_test
 
 # BUILD WAST
 # build_wast_zap_script:
