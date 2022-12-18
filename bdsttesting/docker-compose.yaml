@@ -8,7 +8,7 @@ services:
     image: bkimminich/juice-shop
 
   seleniumbase:
-    build: seleniumspielerein
+    build: selenium
     depends_on:
       - juice_shop
       - zap

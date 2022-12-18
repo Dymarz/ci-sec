@@ -25,6 +25,9 @@ TODOs in this section to run this under windows:
 * gitlab-runner do not support mounting files in windows! :crying_cat_face:
 * Maybe an addition abstraction layer can handle this
   * Copy whole Repo in a fresh Linux Container with Docker and hope that gitlab-runner doesn't have problems with a windows docker desktop daemon
+
+- [x] This project has a private gitlab runner (**disabled**)
+- [ ] Script this gitlab runner and edit this description 
 ___
 ## WAST:
 
@@ -39,8 +42,10 @@ ___
   * otherwise abort
 * error-code from scan make the pipeline fail but the scan was successful.
   * need seperate **evaluate job** or method to handle the error-code, otherwise it will be hard to understand when a scan aborted or a scanreport is accessible 
+  * [x] ExitCodes can be mocked 
 * ARTIFACTS: **.gitlab-ci.yml start the whole repository in a docker** is important to understand because the scanresults from the docker in docker container need to be mount on a volumn in this repository. After the docker-compose.yaml is finish and the services pushed their results in the repository_volumn, the job is done and these results can be pushed from the gitlab runner to the artifacts.
 * Scanresults can not be published when the mounted folder "scanresults" dont have write-permission for all users! happens under local linux
+  * maybe need a privileged gitlab runner container...
 
 ### Comparison to the base repo:
 * don't need to build the zap application
@@ -48,8 +53,18 @@ ___
 * just two instead of three services
 * Use zapscan directly with using their Dockerimage instead of starting zap and then use script with these proxy 
 
+## BDST
+
+### Pitfalls
+* ZAP cant see a sql injection request???
+  * [ ] Should be fixed 
+  * [ ] Publish the reports
+
+### Comparison to the base repo:
+* ruby instead of python
+
 ## Improvement Ideas and Upcoming Questions:
-* Image Cache? Container Cache? Reduce build and startup times. 
+- [ ] Image Cache? Container Cache? Reduce build and startup times. 
 * What is the right scan time??? actually 1min... Fullscan is over 90min.
 * How can this be a Framework or Default Repo for others who wanna integrate fast and for free DAST in their projects? 
   * Try other WebApplications instead of JuiceShop and show differences
