@@ -22,14 +22,19 @@ wast_test:
     - set +e 
     - cd wasttesting
     - docker-compose up --abort-on-container-exit || EXIT_CODE=$?
+    - echo $EXIT_CODE
   after_script:
     - set -e
+    - echo $EXIT_CODE
     - if [ $EXIT_CODE -ne 3 ]; then exit 0; else exit 3; fi
   artifacts:
     name: wastreport
     when: always
     paths:
       - wasttesting/scanresults
+  allow_failures:
+    exit_codes:
+      - 2
 
 
 evaluate_wast:
