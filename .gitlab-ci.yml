@@ -18,7 +18,6 @@ wast_test:
   #  - ci-sec
   stage: test
   image: docker/compose
-  allow_failure: true
   before_script:
     - apk add jq
   script:  
@@ -30,7 +29,12 @@ wast_test:
     - alerts=$(cat wast_report.json | jq -r '.site[].alerts' | jq length)
     - echo $alerts
     - set -e
-    - if [$alerts -gt 0]; then exit 1; else exit 0; fi
+    - case $EXIT_CODE in 
+        0) exit 0 ;;
+        1) exit 1 ;; 
+        2) exit 0 ;; 
+        *) exit 3 
+      esac
   artifacts:
     name: wastreport
     when: always
