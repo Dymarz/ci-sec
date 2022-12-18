@@ -27,7 +27,7 @@ wasttesting:
   after_script:
     - ls -l
     - exitcode=$(tail -n 1 docker-logs.txt)
-    - case $var in 
+    - case $exitcode in 
         0) echo "Success";; 
         1) echo "At Least 1 FAIL";; 
         2) echo "At Least one WARN and no FAILS";; 
