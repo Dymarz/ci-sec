@@ -14,8 +14,8 @@ stages:
   - evaluate
 
 wasttesting:
-  tags:
-    - ci-sec
+  #tags:
+  #  - ci-sec
   stage: test
   image: docker/compose
   allow_failure: true
