@@ -14,24 +14,20 @@ stages:
   - evaluate
 
 wasttesting:
+  tags:
+    - ci-sec
   stage: test
   image: docker/compose
   allow_failure: true
-  before_script:
-    - docker info
   script:  
     - cd wasttesting
-    - docker-compose up --abort-on-container-exit
-  after_script:
-    - false || exit_code=$?
-    - echo $exit_code
+    - chmod o+w scanresults
+    - docker-compose up --exit-code-from zap_scan
   artifacts:
-    name: report
+    name: wastreport
     when: always
     paths:
       - wasttesting/scanresults
-  tags:
-    - ci-sec
 
 # BUILD WAST
 # build_wast_zap_script:
