@@ -13,7 +13,7 @@ stages:
   - test
   - evaluate
 
-wasttesting:
+wast_test:
   #tags:
   #  - ci-sec
   stage: test
