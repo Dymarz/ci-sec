@@ -1,12 +1,6 @@
-#load docker image & start docker engine
 image: docker:20.10.16
 services:
- - docker:20.10.16-dind
-
-#variables:
-#  DOCKER_HOST: tcp://docker:2375
-#  DOCKER_TLS_CERTDIR: ""
-
+  - docker:20.10.16-dind
 
 stages:
   - build
@@ -14,19 +8,17 @@ stages:
   - evaluate
 
 wast_test:
-  #tags:
-  #  - ci-sec
   stage: test
   image: docker/compose
-  script:  
-    - set +e 
+  script:
+    - set +e
     - cd wasttesting
     - docker-compose up --abort-on-container-exit || EXIT_CODE=$?
     - set -e
-    - case $EXIT_CODE in 
-        1) exit 1 ;;
-        2) exit 0 ;;
-        *) exit $EXIT_CODE ;;
+    - case $EXIT_CODE in
+      1) exit 1 ;;
+      2) exit 0 ;;
+      *) exit $EXIT_CODE ;;
       esac
   artifacts:
     name: wastreport
@@ -35,7 +27,6 @@ wast_test:
       - wasttesting/scanresults
   allow_failure:
     exit_codes: 1
-
 
 evaluate_wast:
   stage: evaluate
@@ -48,10 +39,7 @@ evaluate_wast:
   dependencies:
     - wast_test
 
-
 bdst_test:
-  #tags:
-  #  - ci-sec
   stage: test
   image: docker/compose
   script:
@@ -74,15 +62,47 @@ evaluate_bdst:
     - high=$(cat alertsSummary.json | jq -r '.alertsSummary.High')
     - medium=$(cat alertsSummary.json | jq -r '.alertsSummary.Medium')
     - low=$(cat alertsSummary.json | jq -r '.alertsSummary.Low')
-    - if [ $high -gt 0 ] || [ $medium -gt 0 ]; \
-        then exit 1; \
-      elif [ $low -gt 0 ]; \
-        then echo 2; \
-      else echo exit 0; \
+    - if [ $high -gt 0 ] || [ $medium -gt 0 ];
+      then exit 1;
+      elif [ $low -gt 0 ];
+      then echo 2;
+      else echo exit 0;
       fi
   dependencies:
     - bdst_test
 
+sas_test:
+  stage: test
+  image: docker/compose
+  script:
+    - cd sastesting
+    - docker-compose up --abort-on-container-exit
+  artifacts:
+    name: sasreport
+    when: always
+    paths:
+      - sastesting/results
+
+evaluate_sas:
+  stage: evaluate
+  before_script:
+    - apk add jq
+  allow_failure:
+    exit_codes: 2
+  script:
+    - cd sastesting/results
+    - high=$(cat alertsSummary.json | jq -r '.alertsSummary.High')
+    - medium=$(cat alertsSummary.json | jq -r '.alertsSummary.Medium')
+    - low=$(cat alertsSummary.json | jq -r '.alertsSummary.Low')
+    - if [ $high -gt 0 ] || [ $medium -gt 0 ];
+      then exit 1;
+      elif [ $low -gt 0 ];
+      then echo 2;
+      else echo exit 0;
+      fi
+  dependencies:
+    - sas_test
+    
 # BUILD WAST
 # build_wast_zap_script:
 #   stage: build
@@ -121,12 +141,3 @@ evaluate_bdst:
 #       - wasttesting/results
 #     expire_in: 1 week
 
-# # EVALUATE_WAST
-# evaluate_wast:
-#   stage: evaluate
-#   before_script:
-#     - apk add python3
-#   script:
-#     - python3 should_it_fail.py --file=wasttesting/results/zap/json/results.JSON
-#   dependencies:
-#     - test_wast
