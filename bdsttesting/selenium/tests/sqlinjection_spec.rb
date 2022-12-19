@@ -8,7 +8,8 @@ describe 'Sqlinjection' do
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-gpu')
     options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--proxy=zap:8090')
+    options.add_argument('--proxy-server=zap:8090')
+    options.add_argument('--ignore-certificate-errors')
     @driver = Selenium::WebDriver.for :chrome, options: options
     @vars = {}
   end
@@ -20,7 +21,7 @@ describe 'Sqlinjection' do
     element = @driver.find_element(:id, 'navbarAccount')
     @driver.execute_script("arguments[0].click();", element)
     @driver.find_element(:css, '#navbarLoginButton > .mat-icon').click
-    @driver.find_element(:id, 'email').send_keys('\' or 1=1 --')
+    @driver.find_element(:id, 'email').send_keys('\' or 1=1 -')
     @driver.find_element(:id, 'password').send_keys('123')    
     element = @driver.find_element(:css, '#loginButton > .mat-button-wrapper')
     @driver.execute_script("arguments[0].click();", element)

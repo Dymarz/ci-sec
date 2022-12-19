@@ -59,9 +59,12 @@ ___
 * ZAP cant see a sql injection request???
   * [ ] Should be fixed 
   * [ ] Publish the reports
+* Own Selenium Docker Image is too huge (1,7 GB , ty chrome)
+  * [ ] Make it smaller -> build faster
 
 ### Comparison to the base repo:
 * ruby instead of python
+* dont need static ip addresses :)
 
 ## Improvement Ideas and Upcoming Questions:
 - [ ] Image Cache? Container Cache? Reduce build and startup times. 

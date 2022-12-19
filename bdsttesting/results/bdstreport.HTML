@@ -1,0 +1,3634 @@
+<head>
+</head>
+<body>
+<h2>alerts</h2>
+<table border="1">
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+5</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/runtime.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+0</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+</td></tr>
+<tr><td>
+pluginId</td><td>
+10038</td></tr>
+<tr><td>
+cweid</td><td>
+693</td></tr>
+<tr><td>
+confidence</td><td>
+High</td></tr>
+<tr><td>
+wascid</td><td>
+15</td></tr>
+<tr><td>
+description</td><td>
+Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page &mdash; covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</td></tr>
+<tr><td>
+messageId</td><td>
+1</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A05=https://owasp.org/Top10/A05_2021-Security_Misconfiguration/, OWASP_2017_A06=https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html
+http://www.w3.org/TR/CSP/
+http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html
+http://www.html5rocks.com/en/tutorials/security/content-security-policy/
+http://caniuse.com/#feat=contentsecuritypolicy
+http://content-security-policy.com/</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header, to achieve optimal browser support: &quot;Content-Security-Policy&quot; for Chrome 25+, Firefox 23+ and Safari 7+, &quot;X-Content-Security-Policy&quot; for Firefox 4.0+ and Internet Explorer 10+, and &quot;X-WebKit-CSP&quot; for Chrome 14+ and Safari 6+.</td></tr>
+<tr><td>
+alert</td><td>
+Content Security Policy (CSP) Header Not Set</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Content Security Policy (CSP) Header Not Set</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+1</td></tr>
+<tr><td>
+alertRef</td><td>
+10038</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+1</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+2</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js&quot;&gt;&lt;/script&gt;</td></tr>
+<tr><td>
+pluginId</td><td>
+10017</td></tr>
+<tr><td>
+cweid</td><td>
+829</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+15</td></tr>
+<tr><td>
+description</td><td>
+The page includes one or more script files from a third-party domain.</td></tr>
+<tr><td>
+messageId</td><td>
+1</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A08=https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain JavaScript Source File Inclusion</td></tr>
+<tr><td>
+param</td><td>
+//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain JavaScript Source File Inclusion</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+3</td></tr>
+<tr><td>
+alertRef</td><td>
+10017</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js&quot;&gt;&lt;/script&gt;</td></tr>
+<tr><td>
+pluginId</td><td>
+10017</td></tr>
+<tr><td>
+cweid</td><td>
+829</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+15</td></tr>
+<tr><td>
+description</td><td>
+The page includes one or more script files from a third-party domain.</td></tr>
+<tr><td>
+messageId</td><td>
+1</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A08=https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain JavaScript Source File Inclusion</td></tr>
+<tr><td>
+param</td><td>
+//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain JavaScript Source File Inclusion</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+4</td></tr>
+<tr><td>
+alertRef</td><td>
+10017</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+No links have been found while there are scripts, which is an indication that this is a modern web application.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js&quot;&gt;&lt;/script&gt;</td></tr>
+<tr><td>
+pluginId</td><td>
+10109</td></tr>
+<tr><td>
+cweid</td><td>
+-1</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+-1</td></tr>
+<tr><td>
+description</td><td>
+The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</td></tr>
+<tr><td>
+messageId</td><td>
+1</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/</td></tr>
+<tr><td>
+tags</td><td>
+{}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+This is an informational alert and so no changes are required.</td></tr>
+<tr><td>
+alert</td><td>
+Modern Web Application</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Modern Web Application</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+5</td></tr>
+<tr><td>
+alertRef</td><td>
+10109</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+3</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/polyfills.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+6</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+7</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+7</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Age: 7532597</td></tr>
+<tr><td>
+pluginId</td><td>
+10050</td></tr>
+<tr><td>
+cweid</td><td>
+-1</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+-1</td></tr>
+<tr><td>
+description</td><td>
+The content was retrieved from a shared cache. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where caching servers such as &quot;proxy&quot; caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance. </td></tr>
+<tr><td>
+messageId</td><td>
+7</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css</td></tr>
+<tr><td>
+tags</td><td>
+{WSTG-v42-ATHN-06=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/04-Authentication_Testing/06-Testing_for_Browser_Cache_Weaknesses}</td></tr>
+<tr><td>
+reference</td><td>
+https://tools.ietf.org/html/rfc7234
+https://tools.ietf.org/html/rfc7231
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</td></tr>
+<tr><td>
+solution</td><td>
+Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:
+Cache-Control: no-cache, no-store, must-revalidate, private
+Pragma: no-cache
+Expires: 0
+This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</td></tr>
+<tr><td>
+alert</td><td>
+Retrieved from Cache</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Retrieved from Cache</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+8</td></tr>
+<tr><td>
+alertRef</td><td>
+10050</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+13</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+9</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+&lt;a aria-label=&quot;dismiss cookie message&quot; role=button tabindex=&quot;0&quot; class=&quot;cc-btn cc-dismiss&quot;&gt;{{dismiss}}&lt;/a&gt;</td></tr>
+<tr><td>
+pluginId</td><td>
+10109</td></tr>
+<tr><td>
+cweid</td><td>
+-1</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+-1</td></tr>
+<tr><td>
+description</td><td>
+The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</td></tr>
+<tr><td>
+messageId</td><td>
+13</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</td></tr>
+<tr><td>
+tags</td><td>
+{}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+This is an informational alert and so no changes are required.</td></tr>
+<tr><td>
+alert</td><td>
+Modern Web Application</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Modern Web Application</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+10</td></tr>
+<tr><td>
+alertRef</td><td>
+10109</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Age: 3322481</td></tr>
+<tr><td>
+pluginId</td><td>
+10050</td></tr>
+<tr><td>
+cweid</td><td>
+-1</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+-1</td></tr>
+<tr><td>
+description</td><td>
+The content was retrieved from a shared cache. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where caching servers such as &quot;proxy&quot; caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance. </td></tr>
+<tr><td>
+messageId</td><td>
+13</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</td></tr>
+<tr><td>
+tags</td><td>
+{WSTG-v42-ATHN-06=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/04-Authentication_Testing/06-Testing_for_Browser_Cache_Weaknesses}</td></tr>
+<tr><td>
+reference</td><td>
+https://tools.ietf.org/html/rfc7234
+https://tools.ietf.org/html/rfc7231
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</td></tr>
+<tr><td>
+solution</td><td>
+Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:
+Cache-Control: no-cache, no-store, must-revalidate, private
+Pragma: no-cache
+Expires: 0
+This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</td></tr>
+<tr><td>
+alert</td><td>
+Retrieved from Cache</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Retrieved from Cache</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+11</td></tr>
+<tr><td>
+alertRef</td><td>
+10050</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+4</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/main.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+12</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+14</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+13</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The following pattern was used: \bDB\b and was detected 2 times, the first in the element starting with: &quot;}catch(e){}O.set(a,b,c)}else c=void 0;return c}n.extend({hasData:function(a){return O.hasData(a)||N.hasData(a)},data:function(a,&quot;, see evidence field for the suspicious comment/snippet.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+db</td></tr>
+<tr><td>
+pluginId</td><td>
+10027</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Low</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</td></tr>
+<tr><td>
+messageId</td><td>
+14</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</td></tr>
+<tr><td>
+alert</td><td>
+Information Disclosure - Suspicious Comments</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Information Disclosure - Suspicious Comments</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+14</td></tr>
+<tr><td>
+alertRef</td><td>
+10027</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The following pattern was used: \bSELECT\b and was detected in the element starting with: &quot;!function(a,b){&quot;object&quot;==typeof module&amp;&amp;&quot;object&quot;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.docu&quot;, see evidence field for the suspicious comment/snippet.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+select</td></tr>
+<tr><td>
+pluginId</td><td>
+10027</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Low</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</td></tr>
+<tr><td>
+messageId</td><td>
+14</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</td></tr>
+<tr><td>
+alert</td><td>
+Information Disclosure - Suspicious Comments</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Information Disclosure - Suspicious Comments</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+15</td></tr>
+<tr><td>
+alertRef</td><td>
+10027</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+&lt;a id='&quot;+u+&quot;'&gt;&lt;/a&gt;</td></tr>
+<tr><td>
+pluginId</td><td>
+10109</td></tr>
+<tr><td>
+cweid</td><td>
+-1</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+-1</td></tr>
+<tr><td>
+description</td><td>
+The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</td></tr>
+<tr><td>
+messageId</td><td>
+14</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</td></tr>
+<tr><td>
+tags</td><td>
+{}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+This is an informational alert and so no changes are required.</td></tr>
+<tr><td>
+alert</td><td>
+Modern Web Application</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Modern Web Application</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+16</td></tr>
+<tr><td>
+alertRef</td><td>
+10109</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The presence of the 'Age' header indicates that that a HTTP/1.1 compliant caching server is in use.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Age: 795606</td></tr>
+<tr><td>
+pluginId</td><td>
+10050</td></tr>
+<tr><td>
+cweid</td><td>
+-1</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+-1</td></tr>
+<tr><td>
+description</td><td>
+The content was retrieved from a shared cache. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where caching servers such as &quot;proxy&quot; caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance. </td></tr>
+<tr><td>
+messageId</td><td>
+14</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</td></tr>
+<tr><td>
+tags</td><td>
+{WSTG-v42-ATHN-06=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/04-Authentication_Testing/06-Testing_for_Browser_Cache_Weaknesses}</td></tr>
+<tr><td>
+reference</td><td>
+https://tools.ietf.org/html/rfc7234
+https://tools.ietf.org/html/rfc7231
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html (obsoleted by rfc7234)</td></tr>
+<tr><td>
+solution</td><td>
+Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:
+Cache-Control: no-cache, no-store, must-revalidate, private
+Pragma: no-cache
+Expires: 0
+This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</td></tr>
+<tr><td>
+alert</td><td>
+Retrieved from Cache</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Retrieved from Cache</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+17</td></tr>
+<tr><td>
+alertRef</td><td>
+10050</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+CVE-2020-11023
+CVE-2020-11022
+CVE-2015-9251
+CVE-2019-11358
+</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+/2.2.4/jquery.min.js</td></tr>
+<tr><td>
+pluginId</td><td>
+10003</td></tr>
+<tr><td>
+cweid</td><td>
+829</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+-1</td></tr>
+<tr><td>
+description</td><td>
+The identified library jquery, version 2.2.4 is vulnerable.</td></tr>
+<tr><td>
+messageId</td><td>
+14</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</td></tr>
+<tr><td>
+tags</td><td>
+{CVE-2020-11023=, OWASP_2017_A09=https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities.html, CVE-2020-11022=, OWASP_2021_A06=https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/, CVE-2015-9251=, CVE-2019-11358=}</td></tr>
+<tr><td>
+reference</td><td>
+https://github.com/jquery/jquery/issues/2432
+http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/
+http://research.insecurelabs.org/jquery/test/
+https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/
+https://nvd.nist.gov/vuln/detail/CVE-2019-11358
+https://nvd.nist.gov/vuln/detail/CVE-2015-9251
+https://github.com/jquery/jquery/commit/753d591aea698e57d6db58c9f722cd0808619b1b
+https://bugs.jquery.com/ticket/11974
+https://blog.jquery.com/2020/04/10/jquery-3-5-0-released/
+</td></tr>
+<tr><td>
+solution</td><td>
+Please upgrade to the latest version of jquery.</td></tr>
+<tr><td>
+alert</td><td>
+Vulnerable JS Library</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Vulnerable JS Library</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+18</td></tr>
+<tr><td>
+alertRef</td><td>
+10003</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+18</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/admin/application-configuration</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+19</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+192.168.99.100:3000
+192.168.99.100:4200
+</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+192.168.99.100:3000</td></tr>
+<tr><td>
+pluginId</td><td>
+2</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</td></tr>
+<tr><td>
+messageId</td><td>
+18</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/admin/application-configuration</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://tools.ietf.org/html/rfc1918</td></tr>
+<tr><td>
+solution</td><td>
+Remove the private IP address from the HTTP response body.  For comments, use JSP/ASP/PHP comment instead of HTML/JavaScript comment which can be seen by client browsers.</td></tr>
+<tr><td>
+alert</td><td>
+Private IP Disclosure</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Private IP Disclosure</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+20</td></tr>
+<tr><td>
+alertRef</td><td>
+2</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+1969196030, which evaluates to: 2032-05-26 14:53:50</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+1969196030</td></tr>
+<tr><td>
+pluginId</td><td>
+10096</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Low</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+A timestamp was disclosed by the application/web server - Unix</td></tr>
+<tr><td>
+messageId</td><td>
+18</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/admin/application-configuration</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://projects.webappsec.org/w/page/13246936/Information%20Leakage</td></tr>
+<tr><td>
+solution</td><td>
+Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</td></tr>
+<tr><td>
+alert</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+21</td></tr>
+<tr><td>
+alertRef</td><td>
+10096</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+1970691216, which evaluates to: 2032-06-12 22:13:36</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+1970691216</td></tr>
+<tr><td>
+pluginId</td><td>
+10096</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Low</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+A timestamp was disclosed by the application/web server - Unix</td></tr>
+<tr><td>
+messageId</td><td>
+18</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/admin/application-configuration</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://projects.webappsec.org/w/page/13246936/Information%20Leakage</td></tr>
+<tr><td>
+solution</td><td>
+Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</td></tr>
+<tr><td>
+alert</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+22</td></tr>
+<tr><td>
+alertRef</td><td>
+10096</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The following pattern was used: \bQUERY\b and was detected in the element starting with: &quot;&quot;use strict&quot;;(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[179],{902:(at,Bt,d)=&gt;{var J=d(2313),t=d(5e3),k=d(5&quot;, see evidence field for the suspicious comment/snippet.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+query</td></tr>
+<tr><td>
+pluginId</td><td>
+10027</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Low</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</td></tr>
+<tr><td>
+messageId</td><td>
+4</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/main.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</td></tr>
+<tr><td>
+alert</td><td>
+Information Disclosure - Suspicious Comments</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Information Disclosure - Suspicious Comments</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+23</td></tr>
+<tr><td>
+alertRef</td><td>
+10027</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+</td></tr>
+<tr><td>
+pluginId</td><td>
+10021</td></tr>
+<tr><td>
+cweid</td><td>
+693</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+15</td></tr>
+<tr><td>
+description</td><td>
+The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</td></tr>
+<tr><td>
+messageId</td><td>
+21</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=OKfiBO1</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A05=https://owasp.org/Top10/A05_2021-Security_Misconfiguration/, OWASP_2017_A06=https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx
+https://owasp.org/www-community/Security_Headers</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</td></tr>
+<tr><td>
+alert</td><td>
+X-Content-Type-Options Header Missing</td></tr>
+<tr><td>
+param</td><td>
+X-Content-Type-Options</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+X-Content-Type-Options Header Missing</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+24</td></tr>
+<tr><td>
+alertRef</td><td>
+10021</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+22</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/assets/i18n/en.json</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+25</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+1734944650, which evaluates to: 2024-12-23 09:04:10</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+1734944650</td></tr>
+<tr><td>
+pluginId</td><td>
+10096</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Low</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+A timestamp was disclosed by the application/web server - Unix</td></tr>
+<tr><td>
+messageId</td><td>
+4</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/main.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://projects.webappsec.org/w/page/13246936/Information%20Leakage</td></tr>
+<tr><td>
+solution</td><td>
+Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</td></tr>
+<tr><td>
+alert</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+26</td></tr>
+<tr><td>
+alertRef</td><td>
+10096</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+17</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/styles.css</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+28</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+26</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/admin/application-version</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+31</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+31</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/MaterialIcons-Regular.woff2</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+36</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+32</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/languages</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+37</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+POST</td></tr>
+<tr><td>
+evidence</td><td>
+</td></tr>
+<tr><td>
+pluginId</td><td>
+10020</td></tr>
+<tr><td>
+cweid</td><td>
+1021</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+15</td></tr>
+<tr><td>
+description</td><td>
+The response does not include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options to protect against 'ClickJacking' attacks.</td></tr>
+<tr><td>
+messageId</td><td>
+34</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=OKfiBSV&amp;sid=Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A05=https://owasp.org/Top10/A05_2021-Security_Misconfiguration/, WSTG-v42-CLNT-09=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking, OWASP_2017_A06=https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</td></tr>
+<tr><td>
+solution</td><td>
+Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.
+If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's &quot;frame-ancestors&quot; directive.</td></tr>
+<tr><td>
+alert</td><td>
+Missing Anti-clickjacking Header</td></tr>
+<tr><td>
+param</td><td>
+X-Frame-Options</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Missing Anti-clickjacking Header</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+39</td></tr>
+<tr><td>
+alertRef</td><td>
+10020-1</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+POST</td></tr>
+<tr><td>
+evidence</td><td>
+</td></tr>
+<tr><td>
+pluginId</td><td>
+10038</td></tr>
+<tr><td>
+cweid</td><td>
+693</td></tr>
+<tr><td>
+confidence</td><td>
+High</td></tr>
+<tr><td>
+wascid</td><td>
+15</td></tr>
+<tr><td>
+description</td><td>
+Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page &mdash; covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</td></tr>
+<tr><td>
+messageId</td><td>
+34</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=OKfiBSV&amp;sid=Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A05=https://owasp.org/Top10/A05_2021-Security_Misconfiguration/, OWASP_2017_A06=https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy
+https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html
+http://www.w3.org/TR/CSP/
+http://w3c.github.io/webappsec/specs/content-security-policy/csp-specification.dev.html
+http://www.html5rocks.com/en/tutorials/security/content-security-policy/
+http://caniuse.com/#feat=contentsecuritypolicy
+http://content-security-policy.com/</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header, to achieve optimal browser support: &quot;Content-Security-Policy&quot; for Chrome 25+, Firefox 23+ and Safari 7+, &quot;X-Content-Security-Policy&quot; for Firefox 4.0+ and Internet Explorer 10+, and &quot;X-WebKit-CSP&quot; for Chrome 14+ and Safari 6+.</td></tr>
+<tr><td>
+alert</td><td>
+Content Security Policy (CSP) Header Not Set</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Content Security Policy (CSP) Header Not Set</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+40</td></tr>
+<tr><td>
+alertRef</td><td>
+10038</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+POST</td></tr>
+<tr><td>
+evidence</td><td>
+Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+pluginId</td><td>
+3</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+High</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+URL rewrite is used to track user session ID. The session ID may be disclosed via cross-site referer header. In addition, the session ID might be stored in browser history or server logs.</td></tr>
+<tr><td>
+messageId</td><td>
+34</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=OKfiBSV&amp;sid=Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, WSTG-v42-SESS-04=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html</td></tr>
+<tr><td>
+solution</td><td>
+For secure content, put session ID in a cookie. To be even more secure consider using a combination of cookie and URL rewrite.</td></tr>
+<tr><td>
+alert</td><td>
+Session ID in URL Rewrite</td></tr>
+<tr><td>
+param</td><td>
+sid</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Session ID in URL Rewrite</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+41</td></tr>
+<tr><td>
+alertRef</td><td>
+3</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td></tr>
+<tr><td>
+method</td><td>
+POST</td></tr>
+<tr><td>
+evidence</td><td>
+</td></tr>
+<tr><td>
+pluginId</td><td>
+10021</td></tr>
+<tr><td>
+cweid</td><td>
+693</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+15</td></tr>
+<tr><td>
+description</td><td>
+The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</td></tr>
+<tr><td>
+messageId</td><td>
+34</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=OKfiBSV&amp;sid=Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A05=https://owasp.org/Top10/A05_2021-Security_Misconfiguration/, OWASP_2017_A06=https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx
+https://owasp.org/www-community/Security_Headers</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</td></tr>
+<tr><td>
+alert</td><td>
+X-Content-Type-Options Header Missing</td></tr>
+<tr><td>
+param</td><td>
+X-Content-Type-Options</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+X-Content-Type-Options Header Missing</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+42</td></tr>
+<tr><td>
+alertRef</td><td>
+10021</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+6</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/vendor.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+43</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+pluginId</td><td>
+3</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+High</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+URL rewrite is used to track user session ID. The session ID may be disclosed via cross-site referer header. In addition, the session ID might be stored in browser history or server logs.</td></tr>
+<tr><td>
+messageId</td><td>
+35</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=OKfiBSZ&amp;sid=Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, WSTG-v42-SESS-04=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html</td></tr>
+<tr><td>
+solution</td><td>
+For secure content, put session ID in a cookie. To be even more secure consider using a combination of cookie and URL rewrite.</td></tr>
+<tr><td>
+alert</td><td>
+Session ID in URL Rewrite</td></tr>
+<tr><td>
+param</td><td>
+sid</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Session ID in URL Rewrite</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+44</td></tr>
+<tr><td>
+alertRef</td><td>
+3</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+</td></tr>
+<tr><td>
+pluginId</td><td>
+10021</td></tr>
+<tr><td>
+cweid</td><td>
+693</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+15</td></tr>
+<tr><td>
+description</td><td>
+The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</td></tr>
+<tr><td>
+messageId</td><td>
+35</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=OKfiBSZ&amp;sid=Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A05=https://owasp.org/Top10/A05_2021-Security_Misconfiguration/, OWASP_2017_A06=https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx
+https://owasp.org/www-community/Security_Headers</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</td></tr>
+<tr><td>
+alert</td><td>
+X-Content-Type-Options Header Missing</td></tr>
+<tr><td>
+param</td><td>
+X-Content-Type-Options</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+X-Content-Type-Options Header Missing</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+45</td></tr>
+<tr><td>
+alertRef</td><td>
+10021</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+36</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/products/search?q=</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+46</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+1970691216, which evaluates to: 2032-06-12 22:13:36</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+1970691216</td></tr>
+<tr><td>
+pluginId</td><td>
+10096</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Low</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+A timestamp was disclosed by the application/web server - Unix</td></tr>
+<tr><td>
+messageId</td><td>
+36</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/products/search?q=</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://projects.webappsec.org/w/page/13246936/Information%20Leakage</td></tr>
+<tr><td>
+solution</td><td>
+Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</td></tr>
+<tr><td>
+alert</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+47</td></tr>
+<tr><td>
+alertRef</td><td>
+10096</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+1969196030, which evaluates to: 2032-05-26 14:53:50</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+1969196030</td></tr>
+<tr><td>
+pluginId</td><td>
+10096</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Low</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+A timestamp was disclosed by the application/web server - Unix</td></tr>
+<tr><td>
+messageId</td><td>
+36</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/products/search?q=</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://projects.webappsec.org/w/page/13246936/Information%20Leakage</td></tr>
+<tr><td>
+solution</td><td>
+Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</td></tr>
+<tr><td>
+alert</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Timestamp Disclosure - Unix</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+48</td></tr>
+<tr><td>
+alertRef</td><td>
+10096</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+42</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/api/Challenges/?name=Score%20Board</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+50</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+pluginId</td><td>
+3</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+High</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+URL rewrite is used to track user session ID. The session ID may be disclosed via cross-site referer header. In addition, the session ID might be stored in browser history or server logs.</td></tr>
+<tr><td>
+messageId</td><td>
+45</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, WSTG-v42-SESS-04=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html</td></tr>
+<tr><td>
+solution</td><td>
+For secure content, put session ID in a cookie. To be even more secure consider using a combination of cookie and URL rewrite.</td></tr>
+<tr><td>
+alert</td><td>
+Session ID in URL Rewrite</td></tr>
+<tr><td>
+param</td><td>
+sid</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Session ID in URL Rewrite</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+51</td></tr>
+<tr><td>
+alertRef</td><td>
+3</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+46</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/api/Quantitys/</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+53</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+63</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/user/whoami</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+55</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+POST</td></tr>
+<tr><td>
+evidence</td><td>
+HTTP/1.1 500 Internal Server Error</td></tr>
+<tr><td>
+pluginId</td><td>
+90022</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</td></tr>
+<tr><td>
+messageId</td><td>
+65</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/user/login</td></tr>
+<tr><td>
+tags</td><td>
+{WSTG-v42-ERRH-02=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/02-Testing_for_Stack_Traces, WSTG-v42-ERRH-01=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/01-Testing_For_Improper_Error_Handling, OWASP_2021_A05=https://owasp.org/Top10/A05_2021-Security_Misconfiguration/, OWASP_2017_A06=https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</td></tr>
+<tr><td>
+alert</td><td>
+Application Error Disclosure</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Application Error Disclosure</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+56</td></tr>
+<tr><td>
+alertRef</td><td>
+90022</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</td></tr>
+<tr><td>
+method</td><td>
+POST</td></tr>
+<tr><td>
+evidence</td><td>
+Access-Control-Allow-Origin: *</td></tr>
+<tr><td>
+pluginId</td><td>
+10098</td></tr>
+<tr><td>
+cweid</td><td>
+264</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+14</td></tr>
+<tr><td>
+description</td><td>
+Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server</td></tr>
+<tr><td>
+messageId</td><td>
+65</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/rest/user/login</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A05=https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html}</td></tr>
+<tr><td>
+reference</td><td>
+https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).
+Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</td></tr>
+<tr><td>
+alert</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Cross-Domain Misconfiguration</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+57</td></tr>
+<tr><td>
+alertRef</td><td>
+10098</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+pluginId</td><td>
+3</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+High</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+URL rewrite is used to track user session ID. The session ID may be disclosed via cross-site referer header. In addition, the session ID might be stored in browser history or server logs.</td></tr>
+<tr><td>
+messageId</td><td>
+66</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=OKfiBUy&amp;sid=Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, WSTG-v42-SESS-04=https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://seclists.org/lists/webappsec/2002/Oct-Dec/0111.html</td></tr>
+<tr><td>
+solution</td><td>
+For secure content, put session ID in a cookie. To be even more secure consider using a combination of cookie and URL rewrite.</td></tr>
+<tr><td>
+alert</td><td>
+Session ID in URL Rewrite</td></tr>
+<tr><td>
+param</td><td>
+sid</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Session ID in URL Rewrite</td></tr>
+<tr><td>
+risk</td><td>
+Medium</td></tr>
+<tr><td>
+id</td><td>
+58</td></tr>
+<tr><td>
+alertRef</td><td>
+3</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.
+At &quot;High&quot; threshold this scan rule will not alert on client or server error responses.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+</td></tr>
+<tr><td>
+pluginId</td><td>
+10021</td></tr>
+<tr><td>
+cweid</td><td>
+693</td></tr>
+<tr><td>
+confidence</td><td>
+Medium</td></tr>
+<tr><td>
+wascid</td><td>
+15</td></tr>
+<tr><td>
+description</td><td>
+The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</td></tr>
+<tr><td>
+messageId</td><td>
+66</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=OKfiBUy&amp;sid=Jzpg3l8pH4-MzP5rAAAA</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A05=https://owasp.org/Top10/A05_2021-Security_Misconfiguration/, OWASP_2017_A06=https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html}</td></tr>
+<tr><td>
+reference</td><td>
+http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx
+https://owasp.org/www-community/Security_Headers</td></tr>
+<tr><td>
+solution</td><td>
+Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</td></tr>
+<tr><td>
+alert</td><td>
+X-Content-Type-Options Header Missing</td></tr>
+<tr><td>
+param</td><td>
+X-Content-Type-Options</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+X-Content-Type-Options Header Missing</td></tr>
+<tr><td>
+risk</td><td>
+Low</td></tr>
+<tr><td>
+id</td><td>
+59</td></tr>
+<tr><td>
+alertRef</td><td>
+10021</td></tr>
+</table>
+</td></tr>
+<tr><td>
+<h2>alert</h2>
+<table border="1">
+<tr><td>
+sourceid</td><td>
+3</td></tr>
+<tr><td>
+other</td><td>
+The following pattern was used: \bQUERY\b and was detected in the element starting with: &quot;(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[736],{9187:(yt,de,u)=&gt;{&quot;use strict&quot;;u.d(de,{Xy:()=&gt;ie,ne:()=&gt;Ue&quot;, see evidence field for the suspicious comment/snippet.</td></tr>
+<tr><td>
+method</td><td>
+GET</td></tr>
+<tr><td>
+evidence</td><td>
+query</td></tr>
+<tr><td>
+pluginId</td><td>
+10027</td></tr>
+<tr><td>
+cweid</td><td>
+200</td></tr>
+<tr><td>
+confidence</td><td>
+Low</td></tr>
+<tr><td>
+wascid</td><td>
+13</td></tr>
+<tr><td>
+description</td><td>
+The response appears to contain suspicious comments which may help an attacker. Note: Matches made within script blocks or files are against the entire content not only comments.</td></tr>
+<tr><td>
+messageId</td><td>
+6</td></tr>
+<tr><td>
+inputVector</td><td>
+</td></tr>
+<tr><td>
+url</td><td>
+http://juice_shop:3000/vendor.js</td></tr>
+<tr><td>
+tags</td><td>
+{OWASP_2021_A01=https://owasp.org/Top10/A01_2021-Broken_Access_Control/, OWASP_2017_A03=https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html}</td></tr>
+<tr><td>
+reference</td><td>
+</td></tr>
+<tr><td>
+solution</td><td>
+Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</td></tr>
+<tr><td>
+alert</td><td>
+Information Disclosure - Suspicious Comments</td></tr>
+<tr><td>
+param</td><td>
+</td></tr>
+<tr><td>
+attack</td><td>
+</td></tr>
+<tr><td>
+name</td><td>
+Information Disclosure - Suspicious Comments</td></tr>
+<tr><td>
+risk</td><td>
+Informational</td></tr>
+<tr><td>
+id</td><td>
+60</td></tr>
+<tr><td>
+alertRef</td><td>
+10027</td></tr>
+</table>
+</td></tr>
+</table>
+</body>

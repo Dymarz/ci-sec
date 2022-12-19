@@ -12,7 +12,6 @@ services:
     depends_on:
       - juice_shop
       - zap
-    command: /wait-for-it.sh juice_shop:3000 --timeout=30 -- /wait-for-it.sh zap:8090 --timeout=90 --  rspec .
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-      - ./results:/results
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./results:/app/zapresults
