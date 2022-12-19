@@ -81,7 +81,7 @@ evaluate_bdst:
       else echo exit 0; \
       fi
   dependencies:
-    - wast_test
+    - bdst_test
 
 # BUILD WAST
 # build_wast_zap_script:
