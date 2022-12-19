@@ -63,7 +63,7 @@ bdst_test:
     paths:
       - bdsttesting/results
 
-evaluate_wast:
+evaluate_bdst:
   stage: evaluate
   before_script:
     - apk add jq
