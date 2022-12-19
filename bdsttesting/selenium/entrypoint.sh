@@ -1,7 +1,11 @@
 #!/bin/sh
-set -e
-/wait-for-it.sh juice_shop:3000 --timeout=30 -- /wait-for-it.sh zap:8090 --timeout=90 -- rspec . || EXIT_CODE=$? 
-sleep 5 
-curl -X GET http://zap:8090/HTML/core/view/alerts > ./zapresults/bdstreport.HTML
-curl -X GET http://zap:8090/JSON/core/view/alerts > ./zapresults/bdstreport.JSON 
-exit $EXIT_CODE
+/wait-for-it.sh juice_shop:3000 -t 30 
+/wait-for-it.sh zap:8090 -t 90 
+echo "Start BDST Tests against http://juice_shop:3000 throw proxy http://zap:8090"
+rspec . 
+sleep 10
+echo "Download alertsSummary.json to /app/zapresults"
+curl http://zap:8090/JSON/alert/view/alertsSummary/?baseurl=http://juice_shop:3000 > ./zapresults/alertsSummary.json 
+
+echo "Generate bdstreport.pdf"
+curl "http://zap:8090/JSON/reports/action/generate/?title=JuiceShop&template=traditional-pdf&theme=&description=&contexts=&sites=http://juice_shop:3000&sections=&includedConfidences=&includedRisks=&reportFileName=bdstreport&reportFileNamePattern=&reportDir=/home/zap/results&display="

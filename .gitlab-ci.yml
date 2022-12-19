@@ -57,6 +57,31 @@ bdst_test:
   script:
     - cd bdsttesting
     - docker-compose up --abort-on-container-exit
+  artifacts:
+    name: bdstreport
+    when: always
+    paths:
+      - bdsttesting/results
+
+evaluate_wast:
+  stage: evaluate
+  before_script:
+    - apk add jq
+  allow_failure:
+    exit_codes: 2
+  script:
+    - cd bdsttesting/results
+    - high=$(cat alertsSummary.json | jq -r '.alertsSummary.High')
+    - medium=$(cat alertsSummary.json | jq -r '.alertsSummary.Medium')
+    - low=$(cat alertsSummary.json | jq -r '.alertsSummary.Low')
+    - if [ $high -gt 0 ] || [ $medium -gt 0 ]; \
+        then exit 1; \
+      elif [ $low -gt 0 ]; \
+        then echo 2; \
+      else echo exit 0; \
+      fi
+  dependencies:
+    - wast_test
 
 # BUILD WAST
 # build_wast_zap_script:

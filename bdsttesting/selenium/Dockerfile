@@ -9,8 +9,8 @@ RUN chmod +x /wait-for-it.sh
 WORKDIR /app
 COPY . .
 
-RUN mkdir ./zapresults
+RUN mkdir ./results
 
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
